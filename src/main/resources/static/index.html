@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <script src="js/resources.js"></script>
+</head>
+<body>
+<div id="app">
+
+    <!-- 头部-->
+    <script src="js/header.js"></script>
+
+    <!-- 主体 -->
+    <div style="display: flex; margin: 5px;">
+
+        <!-- 菜单栏-->
+        <script src="js/nav.js"></script>
+
+        <!-- 数据展示区域 -->
+        <div style="flex: 1; padding: 10px">
+            <ul class="list-group">
+                <li class="list-group-item">id：{{user.id}}</li>
+                <li class="list-group-item">账号：{{user.username}}</li>
+                <li class="list-group-item">姓名：{{user.name}}</li>
+                <li class="list-group-item">年龄：{{user.age}}</li>
+                <li class="list-group-item">生日：{{user.birth}}</li>
+                <li class="list-group-item">账户余额{{user.account}}</li>
+                <li class="list-group-item">手机号:{{user.phone}}</li>
+                <li class="list-group-item">邮箱：{{user.email}}</li>
+                <li class="list-group-item">身份：{{user.role}}</li>
+            </ul>
+
+        </div>
+    </div>
+</div>
+
+
+<script>
+   new Vue({
+       el: '#app',
+       data(){
+           return{
+               user: localStorage.getItem("user")?JSON.parse(localStorage.getItem("user")): {}
+           }
+       },
+       created(){
+
+       },
+       methods: {
+
+       }
+   })
+</script>
+</body>
+</html>
